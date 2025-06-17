@@ -1,0 +1,213 @@
+/* Estilos personalizados para a landing page */
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes floatButton {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Estilos gerais */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Animação de entrada dos elementos */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* Estilos do carrossel de depoimentos */
+.testimonials-container {
+    width: 100%;
+    position: relative;
+}
+
+/* Estilos das perguntas frequentes */
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+/* Estilos de hover nos serviços */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Personalização de formulários */
+input:focus, textarea:focus, select:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* WhatsApp flutuante */
+.fixed[href*="wa.me"] {
+    animation: floatButton 3s ease-in-out infinite;
+    z-index: 100;
+}
+
+/* Botão de volta ao topo removido */
+
+/* Efeito de hover nos links do menu */
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3B82F6;
+    transition: width 0.3s;
+    margin-top: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Estilos específicos para Psi Natan */
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, rgba(59, 130, 246, 0.9), rgba(147, 197, 253, 0.9));
+}
+
+/* Estilo do botão WhatsApp flutuante */
+.fixed[href*="wa.me"] {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+.fixed[href*="wa.me"]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo para cards de serviços */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilo para depoimentos */
+.testimonial-item {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos para o carrossel de fotos removidos */
+
+/* Estilos para animação suave */
+[data-animate] {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+}
+
+[data-animate].visible {
+    opacity: 1;
+}
+
+[data-animate="fade"] {
+    transform: none;
+}
+
+[data-animate="fade"].visible {
+    opacity: 1;
+}
+
+[data-animate="slide-up"] {
+    transform: translateY(30px);
+}
+
+[data-animate="slide-up"].visible {
+    transform: translateY(0);
+}
+
+[data-animate="slide-right"] {
+    transform: translateX(-30px);
+}
+
+[data-animate="slide-right"].visible {
+    transform: translateX(0);
+}
+
+[data-animate="slide-left"] {
+    transform: translateX(30px);
+}
+
+[data-animate="slide-left"].visible {
+    transform: translateX(0);
+}
+
+/* Seção de contato com fundo de imagem */
+#contato {
+    position: relative;
+    color: #fff;
+}
+
+#contato::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(59, 130, 246, 0.7);
+    z-index: 1;
+}
+
+#contato .container {
+    position: relative;
+    z-index: 2;
+}
+
+#contato h2, #contato p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    .testimonials-wrapper {
+        scroll-snap-type: x mandatory;
+    }
+    
+    .testimonial-item {
+        scroll-snap-align: center;
+    }
+}

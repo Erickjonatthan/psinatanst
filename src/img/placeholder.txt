@@ -1,0 +1,8 @@
+Este é um arquivo de placeholder. Por favor, adicione suas próprias imagens para a landing page aqui.
+
+Nome de arquivos necessários:
+- hero-bg.jpg (imagem de fundo do banner principal)
+- psicologa.jpg (foto do profissional)
+- paciente1.jpg, paciente2.jpg, paciente3.jpg (fotos para os depoimentos)
+
+Para melhores resultados, use imagens de alta qualidade e otimize-as para web.
