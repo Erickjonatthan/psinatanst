@@ -19,6 +19,99 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Funcionalidade de tema escuro
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const html = document.documentElement;
+    
+    // Verificar preferência salva ou preferência do sistema
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Aplicar tema salvo ou usar preferência do sistema
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+        html.classList.add('dark');
+    } else {
+        html.classList.remove('dark');
+    }
+      // Função para alternar o tema
+    function toggleTheme() {
+        if (html.classList.contains('dark')) {
+            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            
+            // Alternar visibilidade dos ícones
+            document.getElementById('light-icon').classList.remove('hidden');
+            document.getElementById('light-icon').classList.add('block');
+            document.getElementById('dark-icon').classList.add('hidden');
+            document.getElementById('dark-icon').classList.remove('block');
+            
+            if (document.getElementById('light-icon-mobile')) {
+                document.getElementById('light-icon-mobile').classList.remove('hidden');
+                document.getElementById('light-icon-mobile').classList.add('block');
+                document.getElementById('dark-icon-mobile').classList.add('hidden');
+                document.getElementById('dark-icon-mobile').classList.remove('block');
+            }
+        } else {
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            
+            // Alternar visibilidade dos ícones
+            document.getElementById('light-icon').classList.add('hidden');
+            document.getElementById('light-icon').classList.remove('block');
+            document.getElementById('dark-icon').classList.remove('hidden');
+            document.getElementById('dark-icon').classList.add('block');
+            
+            if (document.getElementById('light-icon-mobile')) {
+                document.getElementById('light-icon-mobile').classList.add('hidden');
+                document.getElementById('light-icon-mobile').classList.remove('block');
+                document.getElementById('dark-icon-mobile').classList.remove('hidden');
+                document.getElementById('dark-icon-mobile').classList.add('block');
+            }
+        }
+    }
+    
+    // Adicionar evento de clique aos botões de tema
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('click', toggleTheme);
+    }
+    
+    // Atualizar ícones baseado no estado inicial
+    function updateIconsVisibility() {
+        if (html.classList.contains('dark')) {
+            document.getElementById('light-icon').classList.add('hidden');
+            document.getElementById('light-icon').classList.remove('block');
+            document.getElementById('dark-icon').classList.remove('hidden');
+            document.getElementById('dark-icon').classList.add('block');
+            
+            if (document.getElementById('light-icon-mobile')) {
+                document.getElementById('light-icon-mobile').classList.add('hidden');
+                document.getElementById('light-icon-mobile').classList.remove('block');
+                document.getElementById('dark-icon-mobile').classList.remove('hidden');
+                document.getElementById('dark-icon-mobile').classList.add('block');
+            }
+        } else {
+            document.getElementById('light-icon').classList.remove('hidden');
+            document.getElementById('light-icon').classList.add('block');
+            document.getElementById('dark-icon').classList.add('hidden');
+            document.getElementById('dark-icon').classList.remove('block');
+            
+            if (document.getElementById('light-icon-mobile')) {
+                document.getElementById('light-icon-mobile').classList.remove('hidden');
+                document.getElementById('light-icon-mobile').classList.add('block');
+                document.getElementById('dark-icon-mobile').classList.add('hidden');
+                document.getElementById('dark-icon-mobile').classList.remove('block');
+            }
+        }
+    }
+    
+    // Garantir que os ícones estejam corretamente exibidos na inicialização
+    updateIconsVisibility();
+    
     // Funcionalidade de ampliação de imagens
     function configurarAmpliacaoImagem(seletor) {
         const imagem = document.querySelector(seletor);

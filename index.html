@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="light">
 
 <head>
     <meta charset="UTF-8">
@@ -15,9 +15,9 @@
     <link rel="shortcut icon" href="src/img/favicon_io/favicon.ico">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configurações do Tailwind -->
-    <script>
+    <!-- Configurações do Tailwind -->    <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -25,7 +25,7 @@
                         secondary: '#93C5FD', // Azul muito claro
                         accent: '#4ADE80',    // Verde claro
                         light: '#F8F8F8',
-                        dark: '#333333'
+                        dark: '#1F2937'
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
@@ -48,34 +48,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 
-<body class="font-sans text-dark bg-light"> <!-- Cabeçalho/Navegação -->
-    <header class="sticky top-0 bg-white shadow-md z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+<body class="font-sans text-dark bg-light transition-colors duration-300 dark:bg-gray-900 dark:text-white"> <!-- Cabeçalho/Navegação -->
+    <header class="sticky top-0 bg-white shadow-md z-50 transition-colors duration-300 dark:bg-gray-800 dark:shadow-gray-900">        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center"> <a href="index.html"
                     class="text-2xl font-serif font-bold text-primary flex items-center">
                     <img src="src/img/logo.png" alt="Logo Psi Natan" class="h-14">
                 </a>
             </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-gray-600 hover:text-primary transition-colors">Início</a>
-                <a href="#sobre" class="text-gray-600 hover:text-primary transition-colors">Sobre</a>
-                <a href="#servicos" class="text-gray-600 hover:text-primary transition-colors">Serviços</a>
-                <a href="#contato" class="text-gray-600 hover:text-primary transition-colors">Contato</a>
+            <div class="hidden md:flex items-center space-x-8">                <a href="#" class="text-gray-600 hover:text-primary transition-colors dark:text-gray-300 dark:hover:text-primary">Início</a>
+                <a href="#sobre" class="text-gray-600 hover:text-primary transition-colors dark:text-gray-300 dark:hover:text-primary">Sobre</a>
+                <a href="#servicos" class="text-gray-600 hover:text-primary transition-colors dark:text-gray-300 dark:hover:text-primary">Serviços</a>
+                <a href="#contato" class="text-gray-600 hover:text-primary transition-colors dark:text-gray-300 dark:hover:text-primary">Contato</a>                <button id="theme-toggle" class="text-gray-600 hover:text-primary transition-colors flex items-center justify-center w-8 h-8 rounded-full">
+                    <i class="fas fa-sun text-yellow-500 block dark:hidden" id="light-icon"></i>
+                    <i class="fas fa-moon text-blue-700 hidden dark:block" id="dark-icon"></i>
+                </button>
             </div>
 
-            <div class="md:hidden">
+            <div class="md:hidden flex items-center gap-4">                <button id="theme-toggle-mobile" class="text-gray-600 hover:text-primary transition-colors">
+                    <i class="fas fa-sun text-yellow-500 block dark:hidden" id="light-icon-mobile"></i>
+                    <i class="fas fa-moon text-blue-700 hidden dark:block" id="dark-icon-mobile"></i>
+                </button>
                 <button id="menu-toggle" class="text-gray-600 hover:text-primary">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
-        </nav>
-        <!-- Menu mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        </nav>        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg dark:bg-dark dark:text-white">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="#" class="text-gray-600 hover:text-primary py-2 transition-colors">Início</a>
-                <a href="#sobre" class="text-gray-600 hover:text-primary py-2 transition-colors">Sobre</a>
-                <a href="#servicos" class="text-gray-600 hover:text-primary py-2 transition-colors">Serviços</a>
-                <a href="#contato" class="text-gray-600 hover:text-primary py-2 transition-colors">Contato</a>
+                <a href="#" class="text-gray-600 hover:text-primary py-2 transition-colors dark:text-gray-300 dark:hover:text-primary">Início</a>
+                <a href="#sobre" class="text-gray-600 hover:text-primary py-2 transition-colors dark:text-gray-300 dark:hover:text-primary">Sobre</a>
+                <a href="#servicos" class="text-gray-600 hover:text-primary py-2 transition-colors dark:text-gray-300 dark:hover:text-primary">Serviços</a>
+                <a href="#contato" class="text-gray-600 hover:text-primary py-2 transition-colors dark:text-gray-300 dark:hover:text-primary">Contato</a>
             </div>
         </div>
     </header> <!-- Banner principal -->
@@ -97,7 +100,7 @@
             </div>
         </div>
     </section> <!-- Sobre -->
-    <section id="sobre" class="py-20 bg-white">
+    <section id="sobre" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="800">
@@ -138,8 +141,7 @@
     <section id="servicos" class="py-20 bg-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Meus Serviços</h2>
-                <p class="text-xl max-w-3xl mx-auto text-gray-600">Ofereço diversos serviços de psicologia para ajudar
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Meus Serviços</h2>                <p class="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-300">Ofereço diversos serviços de psicologia para ajudar
                     você a superar desafios e alcançar uma vida mais equilibrada e satisfatória.</p>
             </div>
 
@@ -149,8 +151,7 @@
                     <div class="text-primary text-3xl mb-4">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Psicoterapia Individual</h3>
-                    <p class="text-gray-600 mb-4">Atendimento personalizado para adultos que buscam lidar com questões
+                    <h3 class="text-2xl font-bold mb-4">Psicoterapia Individual</h3>                    <p class="text-gray-600 dark:text-gray-300 mb-4">Atendimento personalizado para adultos que buscam lidar com questões
                         como ansiedade, depressão, estresse, autoestima e relacionamentos.</p>
                     <a href="#contato" class="text-primary font-medium inline-flex items-center">
                         Agende sua consulta <i class="fas fa-arrow-right ml-2"></i>
@@ -183,7 +184,7 @@
             </div>
         </div>
     </section> <!-- Diferenciais -->
-    <section id="diferenciais" class="py-20 bg-white">
+    <section id="diferenciais" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Meus Diferenciais</h2>
@@ -233,8 +234,7 @@
     <section class="py-20 bg-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Como funciona o atendimento online?</h2>
-                <p class="text-xl max-w-3xl mx-auto text-gray-600">Um serviço conveniente e eficaz para cuidar da sua
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Como funciona o atendimento online?</h2>                <p class="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-300">Um serviço conveniente e eficaz para cuidar da sua
                     saúde mental sem sair de casa</p>
             </div>
 
@@ -312,10 +312,8 @@
             class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 whatsapp-button">
             <i class="fab fa-whatsapp text-3xl"></i>
         </a>
-    </div>
-
-    <!-- Seção Especial -->
-    <section class="py-20 bg-white overflow-hidden">
+    </div>    <!-- Seção Especial -->
+    <section class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300 overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2 order-2 md:order-1">
@@ -383,9 +381,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section> <!-- Psicoterapia pela psicanálise -->
-    <section class="py-20 bg-white overflow-hidden">
+        </div>    </section> <!-- Psicoterapia pela psicanálise -->
+    <section class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300 overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Como funciona o processo de psicoterapia
@@ -439,24 +436,22 @@
                 </div>
             </div>
         </div>
-    </section> <!-- FAQ -->
-    <section class="py-20 bg-light">
+    </section> <!-- FAQ -->    <section class="py-20 bg-light dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Perguntas Frequentes</h2>
-                <p class="text-xl max-w-3xl mx-auto text-gray-600">Esclareça suas dúvidas sobre o processo terapêutico
+                <p class="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-300">Esclareça suas dúvidas sobre o processo terapêutico
                 </p>
             </div>
 
-            <div class="max-w-3xl mx-auto space-y-6">
-                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <div class="max-w-3xl mx-auto space-y-6">                <div class="border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                     <button
-                        class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
+                        class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
                         <span>Quanto tempo dura uma sessão de terapia?</span>
                         <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
-                    <div class="faq-answer bg-white px-6 py-4 hidden">
-                        <p class="text-gray-600">As sessões de terapia geralmente duram 50 minutos, o que é considerado
+                    <div class="faq-answer bg-white dark:bg-gray-700 px-6 py-4 hidden">
+                        <p class="text-gray-600 dark:text-gray-300">As sessões de terapia geralmente duram 50 minutos, o que é considerado
                             uma hora clínica. Este tempo foi estabelecido para proporcionar uma experiência terapêutica
                             eficaz sem sobrecarregar emocionalmente o paciente.</p>
                     </div>
@@ -518,31 +513,26 @@
             </div>
 
             <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md" data-aos="fade-right" data-aos-duration="800">
+                <div class="md:w-1/2 bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md transition-colors duration-300" data-aos="fade-right" data-aos-duration="800">
                     <h3 class="text-2xl font-bold mb-6">Agende sua Consulta</h3>                    <form id="contact-form" class="space-y-6">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-800 mb-1">Nome Completo</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
+                            <label for="name" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Nome Completo</label>                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white dark:bg-gray-600 dark:text-white dark:border-gray-500">
                         </div>
 
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-800 mb-1">E-mail</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
+                            <label for="email" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">E-mail</label>                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white dark:bg-gray-600 dark:text-white dark:border-gray-500">
                         </div>
 
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-800 mb-1">Telefone</label>
-                            <input type="tel" id="phone" name="phone" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
+                            <label for="phone" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Telefone</label>                            <input type="tel" id="phone" name="phone" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white dark:bg-gray-600 dark:text-white dark:border-gray-500">
                         </div>
 
-                        <div>
-                            <label for="service" class="block text-sm font-medium text-gray-800 mb-1">Serviço de
-                                Interesse</label>
-                            <select id="service" name="service" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
+                        <div>                            <label for="service" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Serviço de
+                                Interesse</label>                            <select id="service" name="service" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white dark:bg-gray-600 dark:text-white dark:border-gray-500">
                                 <option value="" disabled selected>Selecione uma opção</option>
                                 <option value="individual">Psicoterapia Individual</option>
                                 <option value="adolescent">Psicoterapia para Adolescentes</option>
@@ -552,9 +542,8 @@
                         </div>
 
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-800 mb-1">Mensagem</label>
-                            <textarea id="message" name="message" rows="4" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white"></textarea>
+                            <label for="message" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Mensagem</label>                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white dark:bg-gray-600 dark:text-white dark:border-gray-500"></textarea>
                         </div>
 
                         <button type="submit"
@@ -562,8 +551,7 @@
                             Mensagem</button>
                     </form>
                 </div>
-                <div class="md:w-1/2">
-                    <div class="bg-white p-8 rounded-lg shadow-md mb-8 hover:shadow-lg transition-shadow"
+                <div class="md:w-1/2">                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md mb-8 hover:shadow-lg transition-shadow transition-colors duration-300"
                         data-aos="fade-left" data-aos-duration="800">
                         <h3 class="text-2xl font-bold mb-6 text-primary">Informações de Contato</h3>
                         <div class="space-y-6">
@@ -631,10 +619,8 @@
             </div>
         </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
+    </section>    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>

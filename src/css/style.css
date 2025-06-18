@@ -285,6 +285,133 @@ section img[src*="ilustracao_psicologo"]:hover {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Estilos para o Modo Escuro */
+.dark .text-gray-600 {
+    color: #D1D5DB; /* Cor mais clara para texto em fundo escuro */
+}
+
+/* Corrigir todos os parágrafos no modo escuro */
+.dark p:not([class*="text-white"]):not([class*="dark:text-"]) {
+    color: #D1D5DB;
+}
+
+/* Estilo para as seções de perguntas frequentes no modo escuro */
+.dark .faq-question {
+    background-color: #374151;
+    color: #F3F4F6;
+}
+
+.dark .faq-question:hover {
+    background-color: #4B5563;
+}
+
+.dark .faq-answer {
+    background-color: #374151;
+    color: #D1D5DB;
+}
+
+.dark .border-gray-200 {
+    border-color: #4B5563;
+}
+
+/* Corrigir seções com bg-light no modo escuro */
+.dark .bg-light {
+    background-color: #1F2937;
+    color: #F3F4F6;
+}
+
+/* Adicionar modo escuro a todos os elementos com bg-white */
+.dark div[class*="bg-white"] {
+    background-color: #374151 !important;
+    color: #F3F4F6 !important;
+}
+
+/* Corrigir cor dos textos nos campos de formulário no dark mode */
+.dark input, 
+.dark textarea, 
+.dark select, 
+.dark option {
+    color: #F3F4F6 !important;
+    background-color: #374151 !important;
+    border-color: #4B5563 !important;
+}
+
+.dark input::placeholder, 
+.dark textarea::placeholder {
+    color: #D1D5DB !important;
+}
+
+/* Fazer os textos nas cards mais visíveis no modo escuro */
+.dark div[class*="bg-white"] p {
+    color: #D1D5DB !important;
+}
+
+/* Estilizações para as seções específicas */
+.dark h2[class*="text-3xl"] {
+    color: #60A5FA; /* Cor mais clara para títulos principais no modo escuro */
+}
+
+.dark section.py-20.bg-light {
+    background-color: #1F2937;
+    color: #F3F4F6;
+}
+
+/* Ajustes para texto no modo escuro */
+.dark .text-gray-800 {
+    color: #F3F4F6;
+}
+
+/* Botão de tema */
+.theme-toggle {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+}
+
+/* Ajustes específicos para o modo escuro */
+.dark #contato::before {
+    background-color: rgba(30, 64, 175, 0.85);
+}
+
+.dark footer {
+    background-color: #111827;
+}
+
+.dark .faq-question {
+    border-color: #374151;
+}
+
+/* Transições suaves para mudanças de tema */
+.transition-theme, 
+html.dark, 
+html.dark * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Garantir que apenas um ícone de tema seja visível por vez */
+#theme-toggle .fas.fa-sun,
+#theme-toggle-mobile .fas.fa-sun {
+    display: block;
+}
+
+.dark #theme-toggle .fas.fa-sun,
+.dark #theme-toggle-mobile .fas.fa-sun {
+    display: none !important;
+}
+
+#theme-toggle .fas.fa-moon,
+#theme-toggle-mobile .fas.fa-moon {
+    display: none;
+}
+
+.dark #theme-toggle .fas.fa-moon,
+.dark #theme-toggle-mobile .fas.fa-moon {
+    display: block !important;
+}
+
 /* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
     .testimonials-wrapper {
