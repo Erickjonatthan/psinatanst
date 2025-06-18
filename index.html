@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natan ST | Psicólogo Clínico</title>
-    <meta name="description" content="Atendimento psicológico humanizado para cuidar da sua saúde emocional com empatia, ética e acolhimento.">
+    <meta name="description"
+        content="Atendimento psicológico humanizado para cuidar da sua saúde emocional com empatia, ética e acolhimento.">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="src/img/favicon_io/site.webmanifest">
+    <link rel="shortcut icon" href="src/img/favicon_io/favicon.ico">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configurações do Tailwind -->
@@ -30,174 +38,220 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- CSS Personalizado -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet"> <!-- CSS Personalizado -->
     <link rel="stylesheet" href="src/css/style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS - Animate On Scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
-<body class="font-sans text-dark bg-light">    <!-- Cabeçalho/Navegação -->
+
+<body class="font-sans text-dark bg-light"> <!-- Cabeçalho/Navegação -->
     <header class="sticky top-0 bg-white shadow-md z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">            <div class="flex items-center">                <a href="#" class="text-2xl font-serif font-bold text-primary flex items-center">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center"> <a href="index.html"
+                    class="text-2xl font-serif font-bold text-primary flex items-center">
                     <img src="src/img/logo.png" alt="Logo Psi Natan" class="h-14">
                 </a>
             </div>
-              <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-8">
                 <a href="#" class="text-gray-600 hover:text-primary transition-colors">Início</a>
                 <a href="#sobre" class="text-gray-600 hover:text-primary transition-colors">Sobre</a>
                 <a href="#servicos" class="text-gray-600 hover:text-primary transition-colors">Serviços</a>
                 <a href="#contato" class="text-gray-600 hover:text-primary transition-colors">Contato</a>
             </div>
-            
+
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-gray-600 hover:text-primary">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </nav>
-          <!-- Menu mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
                 <a href="#" class="text-gray-600 hover:text-primary py-2 transition-colors">Início</a>
                 <a href="#sobre" class="text-gray-600 hover:text-primary py-2 transition-colors">Sobre</a>
                 <a href="#servicos" class="text-gray-600 hover:text-primary py-2 transition-colors">Serviços</a>
                 <a href="#contato" class="text-gray-600 hover:text-primary py-2 transition-colors">Contato</a>
             </div>
         </div>
-    </header>    <!-- Banner principal -->
-    <section class="relative h-[80vh] bg-gradient-to-r from-primary/90 to-secondary/90 text-white flex items-center">        
+    </header> <!-- Banner principal -->
+    <section class="relative h-[80vh] bg-gradient-to-r from-primary/90 to-secondary/90 text-white flex items-center">
         <div class="absolute inset-0 bg-[url('src/img/banner.png')] bg-cover bg-center mix-blend-overlay"></div>
         <div class="container mx-auto px-4 z-10">
-            <div class="max-w-2xl">                <img src="src/img/logo.png" alt="Logo Psi Natan" class="h-32 mb-6" data-animate="fade">
-                <p class="text-xl mb-8" data-animate="slide-up">Cuidando da sua saúde emocional com empatia, ética e acolhimento.</p>                <div class="flex flex-col sm:flex-row gap-4" data-animate="slide-up">
-                    <a href="#contato" class="bg-accent hover:bg-accent/90 text-dark font-medium px-6 py-3 rounded-md transition-colors inline-block text-center">Agende sua Consulta</a>
-                    <a href="#sobre" class="border border-white hover:bg-white/20 text-white px-6 py-3 rounded-md transition-colors inline-block text-center">Saiba Mais</a>
+            <div class="max-w-2xl"> <img src="src/img/logo.png" alt="Logo Psi Natan" class="h-32 mb-6"
+                    data-aos="fade-down" data-aos-delay="100">
+                <p class="text-xl mb-8" data-aos="fade-up" data-aos-delay="300">Psicoterapia online para adultos e
+                    adolescentes, disponível em todo o Brasil.</p>
+                <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#contato"
+                        class="bg-accent hover:bg-accent/90 text-dark font-medium px-6 py-3 rounded-md transition-colors inline-block text-center">Agende
+                        sua Consulta</a>
+                    <a href="#sobre"
+                        class="border border-white hover:bg-white/20 text-white px-6 py-3 rounded-md transition-colors inline-block text-center">Saiba
+                        Mais</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Sobre -->    <section id="sobre" class="py-20 bg-white">
+    </section> <!-- Sobre -->
+    <section id="sobre" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">                <div class="md:w-1/2">
-                    <img src="src/img/foto_perto.png" alt="Natan | Psicólogo Clínico" class="rounded-lg shadow-lg w-full h-auto object-cover" data-animate="slide-right">
-                </div>                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary" data-animate="fade">Sobre Mim</h2>
-                    <p class="mb-4 text-lg">Sou psicólogo clínico - CRP: 02/30840 e atuo com escuta clínica fundamentada na psicanálise. Meu trabalho é guiado por uma escuta ética, acolhedora e especializada, respeitando a singularidade de cada sujeito.</p>
-                    <p class="mb-4 text-lg">Atendo adolescentes e adultos de todos os gêneros que estejam atravessando momentos de sofrimento psíquico, conflitos internos ou que desejam se conhecer profundamente.</p>
-                    <p class="mb-6 text-lg">Se você está vivendo um tempo de angústias, dúvidas ou precisa de um espaço seguro para falar, aqui encontrará um ambiente de acolhimento e escuta, onde sua fala será respeitada e escutada com atenção e cuidado.</p>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="800">
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="src/img/foto_perto.png" alt="Natan | Psicólogo Clínico"
+                            class="rounded-lg shadow-lg w-full h-auto object-cover transition-all duration-500 group-hover:scale-[1.02]">
+                        <div
+                            class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-lg">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary">Sobre Mim</h2>
+                    <p class="mb-4 text-lg">Sou psicólogo clínico - CRP: 02/30840 e atuo com escuta clínica fundamentada
+                        na psicanálise. Meu trabalho é guiado por uma escuta ética, acolhedora e especializada,
+                        respeitando a singularidade de cada sujeito.</p>
+                    <p class="mb-4 text-lg">Atendo adolescentes e adultos de todos os gêneros que estejam atravessando
+                        momentos de sofrimento psíquico, conflitos internos ou que desejam se conhecer profundamente.
+                    </p>
+                    <p class="mb-6 text-lg">Se você está vivendo um tempo de angústias, dúvidas ou precisa de um espaço
+                        seguro para falar, aqui encontrará um ambiente de acolhimento e escuta, onde sua fala será
+                        respeitada e escutada com atenção e cuidado.</p>
                     <div class="grid grid-cols-1 gap-4">
-                        <div class="bg-light p-4 rounded-lg">
+                        <div class="bg-light p-4 rounded-lg" data-aos="fade-up" data-aos-delay="300">
                             <div class="text-primary text-2xl mb-2"><i class="fas fa-graduation-cap"></i></div>
                             <h3 class="font-bold text-lg mb-1">Formação</h3>
                             <p>Graduação em Psicologia - Especialização em Psicanálise</p>
                         </div>
-                        <div class="bg-light p-4 rounded-lg flex flex-col items-center">
+                        <div class="bg-light p-4 rounded-lg flex flex-col items-center" data-aos="fade-up"
+                            data-aos-delay="400">
                             <img src="src/img/nome_crp.png" alt="Registro Profissional CRP 02/30840" class="h-24 mb-2">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Serviços -->
+    </section> <!-- Serviços -->
     <section id="servicos" class="py-20 bg-light">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary" data-animate="fade">Meus Serviços</h2>
-                <p class="text-xl max-w-3xl mx-auto text-gray-600">Ofereço diversos serviços de psicologia para ajudar você a superar desafios e alcançar uma vida mais equilibrada e satisfatória.</p>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Meus Serviços</h2>
+                <p class="text-xl max-w-3xl mx-auto text-gray-600">Ofereço diversos serviços de psicologia para ajudar
+                    você a superar desafios e alcançar uma vida mais equilibrada e satisfatória.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-animate="slide-up">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="text-primary text-3xl mb-4">
                         <i class="fas fa-user"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Psicoterapia Individual</h3>
-                    <p class="text-gray-600 mb-4">Atendimento personalizado para adultos que buscam lidar com questões como ansiedade, depressão, estresse, autoestima e relacionamentos.</p>
+                    <p class="text-gray-600 mb-4">Atendimento personalizado para adultos que buscam lidar com questões
+                        como ansiedade, depressão, estresse, autoestima e relacionamentos.</p>
                     <a href="#contato" class="text-primary font-medium inline-flex items-center">
                         Agende sua consulta <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
-                  <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-animate="slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="text-primary text-3xl mb-4">
                         <i class="fas fa-child"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Psicoterapia para Adolescentes</h3>
-                    <p class="text-gray-600 mb-4">Acompanhamento especializado para adolescentes que enfrentam desafios emocionais, sociais e comportamentais nessa fase de desenvolvimento.</p>
+                    <p class="text-gray-600 mb-4">Acompanhamento especializado para adolescentes que enfrentam desafios
+                        emocionais, sociais e comportamentais nessa fase de desenvolvimento.</p>
                     <a href="#contato" class="text-primary font-medium inline-flex items-center">
                         Agende sua consulta <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
-                  <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-animate="slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="text-primary text-3xl mb-4">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Terapia de Casal</h3>
-                    <p class="text-gray-600 mb-4">Auxílio para casais que desejam melhorar sua comunicação, resolver conflitos e fortalecer o relacionamento.</p>
+                    <p class="text-gray-600 mb-4">Auxílio para casais que desejam melhorar sua comunicação, resolver
+                        conflitos e fortalecer o relacionamento.</p>
                     <a href="#contato" class="text-primary font-medium inline-flex items-center">
                         Agende sua consulta <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </div>
         </div>
-    </section>    <!-- Diferenciais -->
+    </section> <!-- Diferenciais -->
     <section id="diferenciais" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary" data-animate="fade">Meus Diferenciais</h2>
-                <p class="text-xl max-w-3xl mx-auto text-gray-600">Comprometimento com a sua saúde mental e bem-estar através de um serviço de qualidade e personalizado.</p>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Meus Diferenciais</h2>
+                <p class="text-xl max-w-3xl mx-auto text-gray-600">Comprometimento com a sua saúde mental e bem-estar
+                    através de um serviço de qualidade e personalizado.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="flex flex-col md:flex-row gap-4">
-                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-2xl text-primary">
+                <div class="flex flex-col md:flex-row gap-4" data-aos="fade-right" data-aos-delay="100">
+                    <div
+                        class="flex-shrink-0 w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-2xl text-primary">
                         <i class="fas fa-hand-holding-heart"></i>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-4">Atendimento Humanizado</h3>
-                        <p class="text-gray-600">Foco no acolhimento e no respeito à individualidade de cada pessoa, criando um ambiente seguro para o desenvolvimento do processo terapêutico.</p>
+                        <p class="text-gray-600">Foco no acolhimento e no respeito à individualidade de cada pessoa,
+                            criando um ambiente seguro para o desenvolvimento do processo terapêutico.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-4">
-                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-2xl text-primary">
+                <div class="flex flex-col md:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="flex-shrink-0 w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-2xl text-primary">
                         <i class="fas fa-clock"></i>
-                    </div>                    <div>
+                    </div>
+                    <div>
                         <h3 class="text-2xl font-bold mb-4">Flexibilidade de Horários</h3>
-                        <p class="text-gray-600">Diversos horários disponíveis para melhor atender às suas necessidades, incluindo horários noturnos durante a semana e manhã/tarde aos finais de semana.</p>
+                        <p class="text-gray-600">Diversos horários disponíveis para melhor atender às suas necessidades,
+                            incluindo horários noturnos durante a semana e manhã/tarde aos finais de semana.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-4">
-                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-2xl text-primary">
+                <div class="flex flex-col md:flex-row gap-4" data-aos="fade-left" data-aos-delay="300">
+                    <div
+                        class="flex-shrink-0 w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-2xl text-primary">
                         <i class="fas fa-laptop-house"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold mb-4">Atendimento Online e Presencial</h3>
-                        <p class="text-gray-600">Opções de atendimento que se adaptam à sua rotina e preferências, mantendo a mesma qualidade e compromisso com seu bem-estar.</p>
+                        <h3 class="text-2xl font-bold mb-4">Atendimento Online</h3>
+                        <p class="text-gray-600">Sessões convenientes e eficazes que se adaptam à sua rotina, mantendo a
+                            mesma qualidade e compromisso com seu bem-estar.</p>
                     </div>
-                </div>            </div>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <!-- Como funciona o atendimento online -->
+    </section> <!-- Como funciona o atendimento online -->
     <section class="py-20 bg-light">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary" data-animate="fade">Como funciona o atendimento online?</h2>
-                <p class="text-xl max-w-3xl mx-auto text-gray-600">Um serviço conveniente e eficaz para cuidar da sua saúde mental sem sair de casa</p>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Como funciona o atendimento online?</h2>
+                <p class="text-xl max-w-3xl mx-auto text-gray-600">Um serviço conveniente e eficaz para cuidar da sua
+                    saúde mental sem sair de casa</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-animate="slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="text-primary text-4xl mb-6 flex justify-center">
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center">Modalidade autorizada</h3>
-                    <p class="text-gray-600 text-center">O atendimento online é regulamentado pelo Conselho Federal de Psicologia e segue os mesmos princípios éticos e técnicos do atendimento presencial.</p>
+                    <p class="text-gray-600 text-center">O atendimento online é regulamentado pelo Conselho Federal de
+                        Psicologia e segue todos os princípios éticos e técnicos para garantir a qualidade e
+                        confidencialidade das sessões.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-animate="slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="text-primary text-4xl mb-6 flex justify-center">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -205,59 +259,71 @@
                     <p class="text-gray-600 text-center">Cada sessão tem duração de 50 minutos.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-animate="slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="text-primary text-4xl mb-6 flex justify-center">
                         <i class="fas fa-video"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center">Plataformas utilizadas</h3>
-                    <p class="text-gray-600 text-center">As sessões são realizadas por videochamada do WhatsApp, ou em plataformas seguras e de fácil acesso, como Google Meet.</p>
+                    <p class="text-gray-600 text-center">As sessões são realizadas por videochamada do WhatsApp, ou em
+                        plataformas seguras e de fácil acesso, como Google Meet.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-animate="slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="text-primary text-4xl mb-6 flex justify-center">
                         <i class="fas fa-home"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center">Ambiente recomendado</h3>
-                    <p class="text-gray-600 text-center">É importante que você esteja em um local tranquilo e reservado, onde possa falar com privacidade e se sentir à vontade.</p>
+                    <p class="text-gray-600 text-center">É importante que você esteja em um local tranquilo e reservado,
+                        onde possa falar com privacidade e se sentir à vontade.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-animate="slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="text-primary text-4xl mb-6 flex justify-center">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center">Agendamento personalizado</h3>
-                    <p class="text-gray-600 text-center">Os horários são definidos de forma combinada, respeitando sua disponibilidade e necessidade.</p>
+                    <p class="text-gray-600 text-center">Os horários são definidos de forma combinada, respeitando sua
+                        disponibilidade e necessidade.</p>
                 </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-animate="slide-up">
+
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="text-primary text-4xl mb-6 flex justify-center">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center">Sigilo garantido</h3>
-                    <p class="text-gray-600 text-center">Todas as informações compartilhadas nas sessões são protegidas pelo sigilo profissional, garantindo sua privacidade e segurança.</p>
+                    <p class="text-gray-600 text-center">Todas as informações compartilhadas nas sessões são protegidas
+                        pelo sigilo profissional, garantindo sua privacidade e segurança.</p>
                 </div>
             </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#contato" class="bg-accent hover:bg-accent/90 text-dark font-medium px-8 py-4 rounded-md transition-colors inline-block text-center" data-animate="fade">Agende sua consulta online</a>
+
+            <div class="mt-12 text-center" data-aos="fade" data-aos-delay="400">
+                <a href="#contato"
+                    class="bg-accent hover:bg-accent/90 text-dark font-medium px-8 py-4 rounded-md transition-colors inline-block text-center">Agende
+                    sua consulta online</a>
             </div>
         </div>
-    </section>
-      <!-- Whatsapp Flutuante -->    
+    </section> <!-- Whatsapp Flutuante -->
     <div class="fixed bottom-8 right-8 z-50">
-        <a href="https://wa.me/5581998138936?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110">
+        <a href="https://wa.me/5581998138936?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank"
+            class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 whatsapp-button">
             <i class="fab fa-whatsapp text-3xl"></i>
         </a>
     </div>
-    
+
     <!-- Seção Especial -->
     <section class="py-20 bg-white overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2 order-2 md:order-1">
-                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary" data-animate="fade">Por que buscar ajuda psicológica?</h2>
-                    <p class="mb-4 text-lg">A terapia é um espaço seguro e confidencial onde você pode explorar seus pensamentos, emoções e comportamentos sem julgamentos.</p>
-                    <p class="mb-6 text-lg">Buscar ajuda profissional é um ato de coragem e autocuidado, que pode trazer benefícios significativos para sua qualidade de vida, relacionamentos e bem-estar geral.</p>
+                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary">Por que buscar ajuda psicológica?</h2>
+                    <p class="mb-4 text-lg">A terapia é um espaço seguro e confidencial onde você pode explorar seus
+                        pensamentos, emoções e comportamentos sem julgamentos.</p>
+                    <p class="mb-6 text-lg">Buscar ajuda profissional é um ato de coragem e autocuidado, que pode trazer
+                        benefícios significativos para sua qualidade de vida, relacionamentos e bem-estar geral.</p>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-accent mt-1 mr-3"></i>
@@ -277,132 +343,206 @@
                         </li>
                     </ul>
                 </div>                <div class="md:w-1/2 order-1 md:order-2">
-                    <img src="src/img/foto_perto1.png" alt="Psicoterapia" class="rounded-lg shadow-xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500" data-animate="slide-left">
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="src/img/foto_perto1.png" alt="Psicoterapia"
+                            class="rounded-lg shadow-lg w-full h-auto object-cover transition-all duration-500 group-hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-lg">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>    </section>    <!-- Seção Motivacional -->
+        </div>
+    </section> <!-- Seção Motivacional -->
     <section class="py-20 bg-light">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 order-2 md:order-1">
-                    <img src="src/img/psicolo_e_paciente.png" alt="Psicólogo e Paciente em sessão terapêutica" class="rounded-lg shadow-xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500" data-animate="slide-right">
-                </div>
-                <div class="md:w-1/2 order-1 md:order-2">
-                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary" data-animate="fade">Sente que está difícil lidar com tudo sozinho(a)?</h2>
-                    <p class="mb-4 text-lg">Talvez você só precise de um espaço onde possa falar com calma, sem medo de ser julgado(a), onde a sua dor e os seus silêncios sejam escutados de verdade.</p>
-                    <p class="mb-4 text-lg">Na correria do dia a dia, a gente muitas vezes se afasta de si — das nossas vontades, emoções, daquilo que realmente importa.</p>
-                    <p class="mb-4 text-lg">A psicanálise é um convite para esse reencontro. Um espaço de acolhimento, escuta e cuidado, onde você pode se conhecer melhor e entender o que está por trás do que está doendo.</p>
-                    <p class="mb-6 text-lg">Se você está passando por um momento difícil ou apenas quer cuidar mais de si, a terapia pode ser um começo.</p>
-                    <div class="mb-8">
-                        <a href="#contato" class="bg-accent hover:bg-accent/90 text-dark font-medium px-6 py-3 rounded-md transition-colors inline-block text-center">Agende sua consulta hoje</a>
+            <div class="flex flex-col md:flex-row items-center gap-12">                <div class="md:w-1/2 order-2 md:order-1" data-aos="fade-right" data-aos-duration="800">
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="src/img/psicolo_e_paciente.png" alt="Psicólogo e Paciente em sessão terapêutica"
+                            class="rounded-lg shadow-lg w-full h-auto object-cover transition-all duration-500 group-hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-lg">
+                        </div>
                     </div>
-                </div>            </div>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2" data-aos="fade-left" data-aos-duration="800"
+                    data-aos-delay="200">
+                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary">Sente que está difícil lidar com tudo
+                        sozinho(a)?</h2>
+                    <p class="mb-4 text-lg">Talvez você só precise de um espaço onde possa falar com calma, sem medo de
+                        ser julgado(a), onde a sua dor e os seus silêncios sejam escutados de verdade.</p>
+                    <p class="mb-4 text-lg">Na correria do dia a dia, a gente muitas vezes se afasta de si — das nossas
+                        vontades, emoções, daquilo que realmente importa.</p>
+                    <p class="mb-4 text-lg">A psicanálise é um convite para esse reencontro. Um espaço de acolhimento,
+                        escuta e cuidado, onde você pode se conhecer melhor e entender o que está por trás do que está
+                        doendo.</p>
+                    <p class="mb-6 text-lg">Se você está passando por um momento difícil ou apenas quer cuidar mais de
+                        si, a terapia pode ser um começo.</p>
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#contato"
+                            class="bg-accent hover:bg-accent/90 text-dark font-medium px-6 py-3 rounded-md transition-colors inline-block text-center">Agende
+                            sua consulta hoje</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <!-- Psicoterapia pela psicanálise -->
+    </section> <!-- Psicoterapia pela psicanálise -->
     <section class="py-20 bg-white overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary" data-animate="fade">Como funciona o processo de psicoterapia pela psicanálise?</h2>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Como funciona o processo de psicoterapia
+                    pela psicanálise?</h2>
+                <p class="text-xl max-w-3xl mx-auto text-gray-600">Um espaço para autoconhecimento, escuta e
+                    transformação</p>
             </div>
 
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 order-2 md:order-1">
-                    <div class="prose prose-lg max-w-none" data-animate="slide-right">
-                        <p class="mb-4">Na psicanálise, cada sujeito é único — com sua história, seus desejos, suas dores e suas repetições. O atendimento psicanalítico é um espaço em que você é o protagonista. É sua fala que conduz o processo e, a partir dela, vamos construindo um percurso singular.</p>
-                        
-                        <p class="mb-4">A escuta psicanalítica não busca impor caminhos ou soluções prontas. Ela oferece um espaço ético e acolhedor para que você possa se escutar, se confrontar e, sobretudo, se conhecer.</p>
-                        
-                        <p class="mb-4">Ao falar livremente, sem censura, você poderá se aproximar do que te move, do que te causa sofrimento e também daquilo que deseja — mesmo quando isso ainda não está totalmente claro. A análise convida a sustentar seus próprios desejos, encontrando novas formas de estar no mundo.</p>
-                        
-                        <p class="mb-4">O tempo de cada pessoa nesse processo é único, e a escuta respeita esse ritmo. A psicanálise não oferece respostas rápidas, mas propõe um caminho profundo de transformação.</p>
+                <div class="md:w-1/2 order-2 md:order-1" data-aos="fade-right" data-aos-duration="800">
+                    <div class="prose prose-lg max-w-none">
+                        <p class="mb-4">Na psicanálise, cada sujeito é único — com sua história, seus desejos, suas
+                            dores e suas repetições. O atendimento psicanalítico é um espaço em que você é o
+                            protagonista. É sua fala que conduz o processo e, a partir dela, vamos construindo um
+                            percurso singular.</p>
+
+                        <p class="mb-4">A escuta psicanalítica não busca impor caminhos ou soluções prontas. Ela oferece
+                            um espaço ético e acolhedor para que você possa se escutar, se confrontar e, sobretudo, se
+                            conhecer.</p>
+
+                        <p class="mb-4">Ao falar livremente, sem censura, você poderá se aproximar do que te move, do
+                            que te causa sofrimento e também daquilo que deseja — mesmo quando isso ainda não está
+                            totalmente claro. A análise convida a sustentar seus próprios desejos, encontrando novas
+                            formas de estar no mundo.</p>
+
+                        <p class="mb-4">O tempo de cada pessoa nesse processo é único, e a escuta respeita esse ritmo. A
+                            psicanálise não oferece respostas rápidas, mas propõe um caminho profundo de transformação.
+                        </p>
+
+                        <div class="bg-light p-5 rounded-lg mt-6 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="text-xl font-bold text-primary mb-3">Etapas do processo terapêutico:</h3>
+                            <ol class="list-decimal pl-6 space-y-2">
+                                <li class="text-gray-700"><span class="font-medium">Entrevistas iniciais:</span>
+                                    Primeiros encontros para estabelecer um vínculo terapêutico e compreender a demanda.
+                                </li>
+                                <li class="text-gray-700"><span class="font-medium">Processo analítico:</span>
+                                    Desenvolvimento do trabalho por meio da associação livre e escuta atenta.</li>
+                                <li class="text-gray-700"><span class="font-medium">Elaboração:</span> Ressignificação
+                                    das experiências e desenvolvimento de novos caminhos.</li>
+                            </ol>
+                        </div>
                     </div>
-                </div>
-                <div class="md:w-1/2 order-1 md:order-2" data-animate="slide-left">
-                    <img src="src/img/ilustracao_psicologo.jpg" alt="Processo de psicoterapia pela psicanálise" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>                <div class="md:w-1/2 order-1 md:order-2" data-aos="fade-left" data-aos-duration="800"
+                    data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="src/img/ilustracao_psicologo.jpg" alt="Processo de psicoterapia pela psicanálise"
+                            class="rounded-lg shadow-lg w-full h-auto object-cover transition-all duration-500 group-hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-lg">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- FAQ -->
+    </section> <!-- FAQ -->
     <section class="py-20 bg-light">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary" data-animate="fade">Perguntas Frequentes</h2>
-                <p class="text-xl max-w-3xl mx-auto text-gray-600">Esclareça suas dúvidas sobre o processo terapêutico</p>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Perguntas Frequentes</h2>
+                <p class="text-xl max-w-3xl mx-auto text-gray-600">Esclareça suas dúvidas sobre o processo terapêutico
+                </p>
             </div>
 
             <div class="max-w-3xl mx-auto space-y-6">
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button
+                        class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
                         <span>Quanto tempo dura uma sessão de terapia?</span>
                         <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="faq-answer bg-white px-6 py-4 hidden">
-                        <p class="text-gray-600">As sessões de terapia geralmente duram 50 minutos, o que é considerado uma hora clínica. Este tempo foi estabelecido para proporcionar uma experiência terapêutica eficaz sem sobrecarregar emocionalmente o paciente.</p>
+                        <p class="text-gray-600">As sessões de terapia geralmente duram 50 minutos, o que é considerado
+                            uma hora clínica. Este tempo foi estabelecido para proporcionar uma experiência terapêutica
+                            eficaz sem sobrecarregar emocionalmente o paciente.</p>
                     </div>
                 </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button
+                        class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
                         <span>Com que frequência devo fazer terapia?</span>
                         <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="faq-answer bg-white px-6 py-4 hidden">
-                        <p class="text-gray-600">Recomendo iniciar com sessões semanais para estabelecer uma base sólida para o trabalho terapêutico. À medida que ocorrem progressos, podemos avaliar a possibilidade de ajustar a frequência para quinzenal ou mensal, dependendo das suas necessidades específicas.</p>
+                        <p class="text-gray-600">Recomendo iniciar com sessões semanais para estabelecer uma base sólida
+                            para o trabalho terapêutico. À medida que ocorrem progressos, podemos avaliar a
+                            possibilidade de ajustar a frequência para quinzenal ou mensal, dependendo das suas
+                            necessidades específicas.</p>
                     </div>
                 </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <button
+                        class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
                         <span>Como funciona o atendimento online?</span>
                         <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="faq-answer bg-white px-6 py-4 hidden">
-                        <p class="text-gray-600">O atendimento online é realizado por videoconferência através de plataformas seguras e privadas. Você receberá um link para acessar a sala virtual no horário agendado. É importante estar em um local tranquilo e privado, com boa conexão de internet para garantir a qualidade da sessão.</p>
+                        <p class="text-gray-600">O atendimento online é realizado por videoconferência através de
+                            plataformas seguras e privadas. Você receberá um link para acessar a sala virtual no horário
+                            agendado. É importante estar em um local tranquilo e privado, com boa conexão de internet
+                            para garantir a qualidade da sessão.</p>
                     </div>
                 </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <button
+                        class="faq-question w-full px-6 py-4 text-left font-bold flex justify-between items-center bg-light hover:bg-gray-100 transition-colors">
                         <span>A terapia é confidencial?</span>
                         <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="faq-answer bg-white px-6 py-4 hidden">
-                        <p class="text-gray-600">Sim, a confidencialidade é um princípio fundamental da psicoterapia. Tudo o que é discutido nas sessões é confidencial, exceto em situações específicas previstas pelo código de ética profissional, como risco de vida para o paciente ou terceiros, ou quando solicitado judicialmente.</p>
+                        <p class="text-gray-600">Sim, a confidencialidade é um princípio fundamental da psicoterapia.
+                            Tudo o que é discutido nas sessões é confidencial, exceto em situações específicas previstas
+                            pelo código de ética profissional, como risco de vida para o paciente ou terceiros, ou
+                            quando solicitado judicialmente.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Contato -->    
+    </section> <!-- Contato -->
     <section id="contato" class="py-20 relative">
-        <div class="absolute inset-0 bg-primary/30" style="background-image: url('src/img/contato.png'); background-size: cover; background-position: center; background-blend-mode: overlay;"></div>
+        <div class="absolute inset-0 bg-primary/30"
+            style="background-image: url('src/img/contato.png'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+        </div>
         <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-white" data-animate="fade">Entre em Contato</h2>
-                <p class="text-xl max-w-3xl mx-auto text-white">Estou à disposição para esclarecer suas dúvidas e agendar sua consulta</p>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-serif font-bold mb-4 text-white">Entre em Contato</h2>
+                <p class="text-xl max-w-3xl mx-auto text-white">Estou à disposição para esclarecer suas dúvidas e
+                    agendar sua consulta</p>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-12">                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold mb-6">Agende sua Consulta</h3>                    <form id="contact-form" class="space-y-6" action="https://formspree.io/f/psinatanst@gmail.com" method="POST">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md" data-aos="fade-right" data-aos-duration="800">
+                    <h3 class="text-2xl font-bold mb-6">Agende sua Consulta</h3>                    <form id="contact-form" class="space-y-6">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <label for="name" class="block text-sm font-medium text-gray-800 mb-1">Nome Completo</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
                         </div>
-                        
+
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <label for="email" class="block text-sm font-medium text-gray-800 mb-1">E-mail</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
                         </div>
-                        
+
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
-                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <label for="phone" class="block text-sm font-medium text-gray-800 mb-1">Telefone</label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
                         </div>
-                        
+
                         <div>
-                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Serviço de Interesse</label>
-                            <select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <label for="service" class="block text-sm font-medium text-gray-800 mb-1">Serviço de
+                                Interesse</label>
+                            <select id="service" name="service" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white">
                                 <option value="" disabled selected>Selecione uma opção</option>
                                 <option value="individual">Psicoterapia Individual</option>
                                 <option value="adolescent">Psicoterapia para Adolescentes</option>
@@ -410,92 +550,109 @@
                                 <option value="other">Outro</option>
                             </select>
                         </div>
-                        
+
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            <label for="message" class="block text-sm font-medium text-gray-800 mb-1">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-gray-800 bg-white"></textarea>
                         </div>
-                        
-                        <button type="submit" class="w-full bg-accent hover:bg-accent/90 text-dark font-medium px-6 py-3 rounded-md transition-colors">Enviar Mensagem</button>
+
+                        <button type="submit"
+                            class="w-full bg-accent hover:bg-accent/90 text-dark font-bold px-6 py-3 rounded-md transition-colors">Enviar
+                            Mensagem</button>
                     </form>
                 </div>
-                  <div class="md:w-1/2">
-                    <div class="bg-white p-8 rounded-lg shadow-md mb-8 hover:shadow-lg transition-shadow">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-8 hover:shadow-lg transition-shadow"
+                        data-aos="fade-left" data-aos-duration="800">
                         <h3 class="text-2xl font-bold mb-6 text-primary">Informações de Contato</h3>
                         <div class="space-y-6">
-                            <div class="flex items-start">                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold">Atendimento Online</h4>
-                                    <p class="text-gray-600">Atendimento via plataformas de videoconferência<br>Comodidade e segurança para você</p>
+                                    <h4 class="font-bold text-gray-800">Atendimento Online</h4>
+                                    <p class="text-gray-600">Atendimento via plataformas de
+                                        videoconferência<br>Comodidade e segurança para você</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
                                     <i class="fas fa-phone"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold">Telefone / WhatsApp</h4>
+                                    <h4 class="font-bold text-gray-800">Telefone / WhatsApp</h4>
                                     <p class="text-gray-600">(81) 99813-8936</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold">E-mail</h4>
+                                    <h4 class="font-bold text-gray-800">E-mail</h4>
                                     <p class="text-gray-600">psinatanst@gmail.com</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
                                     <i class="fab fa-instagram"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold">Instagram</h4>
+                                    <h4 class="font-bold text-gray-800">Instagram</h4>
                                     <p class="text-gray-600">@psi.natanst</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                      <div class="bg-white p-8 rounded-lg shadow-md mt-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-2xl font-bold mb-6 text-primary">Horário de Atendimento</h3>                        <div class="flex justify-between py-4 items-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md mt-8 hover:shadow-lg transition-shadow"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold mb-6 text-primary">Horário de Atendimento</h3>
+                        <div class="flex justify-between py-4 items-center">
                             <div class="flex items-center">
                                 <div class="text-primary text-xl mr-3">
                                     <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <span class="font-medium text-lg">Segunda à Sábado</span>
+                                </div> <span class="font-medium text-lg text-gray-800">De segunda à sábado</span>
                             </div>
                             <div class="text-primary font-medium">
-                                08h às 21h
+                                das 08h às 21h
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
-    <!-- Footer -->    <footer class="bg-dark text-white py-12">
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">                <div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
                     <img src="src/img/logo.png" alt="Logo Psi Natan" class="h-16 mb-4 invert">
                     <p class="mb-4">Psicólogo Clínico<br>CRP-02/30840</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/psi.natanst/" target="_blank" class="text-white hover:text-accent transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5581998138936" target="_blank" class="text-white hover:text-accent transition-colors"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:psinatanst@gmail.com" class="text-white hover:text-accent transition-colors"><i class="far fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/psi.natanst/" target="_blank"
+                            class="text-white hover:text-accent transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5581998138936" target="_blank"
+                            class="text-white hover:text-accent transition-colors"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:psinatanst@gmail.com" class="text-white hover:text-accent transition-colors"><i
+                                class="far fa-envelope"></i></a>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Links Rápidos</h3>                    <ul class="space-y-2">
+                    <h3 class="text-xl font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
                         <li><a href="#" class="hover:text-accent transition-colors">Início</a></li>
                         <li><a href="#sobre" class="hover:text-accent transition-colors">Sobre</a></li>
                         <li><a href="#servicos" class="hover:text-accent transition-colors">Serviços</a></li>
@@ -503,25 +660,29 @@
                         <li><a href="#contato" class="hover:text-accent transition-colors">Contato</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-bold mb-4">Serviços</h3>
                     <ul class="space-y-2">
-                        <li><a href="#servicos" class="hover:text-accent transition-colors">Psicoterapia Individual</a></li>
-                        <li><a href="#servicos" class="hover:text-accent transition-colors">Psicoterapia para Adolescentes</a></li>
+                        <li><a href="#servicos" class="hover:text-accent transition-colors">Psicoterapia Individual</a>
+                        </li>
+                        <li><a href="#servicos" class="hover:text-accent transition-colors">Psicoterapia para
+                                Adolescentes</a></li>
                         <li><a href="#servicos" class="hover:text-accent transition-colors">Terapia de Casal</a></li>
-                        <li><a href="#contato" class="hover:text-accent transition-colors">Horários de Atendimento</a></li>
+                        <li><a href="#contato" class="hover:text-accent transition-colors">Horários de Atendimento</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="mt-12 pt-6 border-t border-gray-700 text-center">
-                <p>&copy; 2025 Psi Natan - Todos os direitos reservados</p>
-            </div>
-        </div>
-    </footer>
 
+            <div class="mt-12 pt-6 border-t border-gray-700 text-center">
+                <p>&copy; 2025 Psicólogo Cliníco Natan Santos - Todos os direitos reservados</p>
+            </div>
+        </div>    </footer> <!-- AOS - Animate On Scroll -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- Script JavaScript -->
     <script src="src/js/main.js"></script>
 </body>
+
 </html>

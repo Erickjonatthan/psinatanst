@@ -19,6 +19,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Funcionalidade de ampliação de imagens
+    function configurarAmpliacaoImagem(seletor) {
+        const imagem = document.querySelector(seletor);
+        
+        if (imagem) {
+            imagem.style.cursor = 'pointer';
+            
+            imagem.addEventListener('click', function() {
+                // Criar overlay para a imagem ampliada
+                const overlay = document.createElement('div');
+                overlay.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9999] p-4';
+                
+                // Criar container da imagem
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'relative max-w-4xl w-full';
+                
+                // Criar a imagem ampliada
+                const imgAmpliada = document.createElement('img');
+                imgAmpliada.src = this.src;
+                imgAmpliada.className = 'max-w-full max-h-[80vh] mx-auto object-contain rounded-lg shadow-2xl';
+                
+                // Adicionar botão de fechar
+                const btnFechar = document.createElement('button');
+                btnFechar.className = 'absolute top-2 right-2 bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center';
+                btnFechar.innerHTML = '<i class="fas fa-times"></i>';
+                btnFechar.onclick = function() {
+                    document.body.removeChild(overlay);
+                    document.body.classList.remove('overflow-hidden');
+                };
+                
+                // Montar a estrutura
+                imgContainer.appendChild(imgAmpliada);
+                imgContainer.appendChild(btnFechar);
+                overlay.appendChild(imgContainer);
+                
+                // Adicionar ao body
+                document.body.appendChild(overlay);
+                document.body.classList.add('overflow-hidden');
+                
+                // Fechar ao clicar fora da imagem
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        document.body.removeChild(overlay);
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                });
+            });
+        }
+    }
+      // Configurar ampliação da imagem na seção Sobre
+    configurarAmpliacaoImagem('#sobre img');
+    
     // FAQ toggle
     const faqQuestions = document.querySelectorAll('.faq-question');
     
@@ -38,8 +90,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });      // Código do carrossel de fotos removido
+      // Efeito de destaque para imagens importantes ao passar o mouse
+    const imgSobreMim = document.querySelector('#sobre img[src*="foto_perto"]');
+    const imgPsicanalise = document.querySelector('img[src*="ilustracao_psicologo"]');
     
-    // Formulário de contato
+    if (imgSobreMim) {
+        imgSobreMim.addEventListener('mouseenter', function() {
+            this.classList.add('hover-effect');
+        });
+        
+        imgSobreMim.addEventListener('mouseleave', function() {
+            this.classList.remove('hover-effect');
+        });
+    }
+      if (imgPsicanalise) {
+        imgPsicanalise.addEventListener('mouseenter', function() {
+            // Encontrar o h2 mais próximo na seção
+            const section = this.closest('section');
+            const h2 = section ? section.querySelector('h2') : null;
+            if (h2) h2.classList.add('text-accent');
+        });
+        
+        imgPsicanalise.addEventListener('mouseleave', function() {
+            // Encontrar o h2 mais próximo na seção
+            const section = this.closest('section');
+            const h2 = section ? section.querySelector('h2') : null;
+            if (h2) h2.classList.remove('text-accent');
+        });
+    }
+      // Formulário de contato
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -67,44 +146,61 @@ document.addEventListener('DOMContentLoaded', function() {
                     input.classList.remove('border-red-500');
                 }
             });
-              if (isValid) {
-                // Usando formspree para o envio do formulário
-                // Verifica se estamos usando formspree antes de simular o envio
-                const formAction = contactForm.getAttribute('action');
-                
-                if (!formAction || !formAction.includes('formspree')) {
-                    // Se não estiver configurado com formspree, simular envio
-                    e.preventDefault(); // Impedir o envio normal do formulário
-                }
-                
-                // Desabilitar o botão durante o envio
+            
+            if (isValid) {
+                // Desabilitar o botão durante o processo
                 const submitButton = this.querySelector('button[type="submit"]');
                 submitButton.disabled = true;
-                submitButton.innerText = 'Enviando...';
+                submitButton.innerText = 'Redirecionando...';
                 
-                // Simular tempo de envio
+                // Obter os valores do formulário
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const serviceSelect = document.getElementById('service');
+                const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+                const message = document.getElementById('message').value;
+                
+                // Construir a mensagem formatada para o WhatsApp
+                const whatsappMessage = 
+`Olá, sou *${name}*!
+
+*Serviço:* ${service}
+*E-mail:* ${email}
+*Telefone:* ${phone}
+
+*Mensagem:*
+${message}
+
+Gostaria de agendar uma consulta.`;
+                
+                // Codificar a mensagem para URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // Construir a URL do WhatsApp
+                const whatsappURL = `https://wa.me/5581998138936?text=${encodedMessage}`;
+                
+                // Exibir mensagem de sucesso
+                const successMessage = document.createElement('div');
+                successMessage.className = 'bg-green-100 text-green-700 p-4 rounded-md mt-4 animate-fade-in';
+                successMessage.innerHTML = '<strong>Redirecionando para o WhatsApp!</strong> Uma nova janela será aberta.';
+                
+                contactForm.insertAdjacentElement('afterend', successMessage);
+                
+                // Limpar o formulário
+                contactForm.reset();
+                  // Abrir o WhatsApp em uma nova guia com a mensagem formatada
+                // Isso permitirá que o usuário envie uma mensagem pré-formatada diretamente pelo WhatsApp
+                window.open(whatsappURL, '_blank');
+                
+                // Restaurar o botão
+                submitButton.disabled = false;
+                submitButton.innerText = 'Enviar Mensagem';
+                
+                // Remover mensagem após alguns segundos
                 setTimeout(() => {
-                    // Exibir mensagem de sucesso
-                    const successMessage = document.createElement('div');
-                    successMessage.className = 'bg-green-100 text-green-700 p-4 rounded-md mt-4 animate-fade-in';
-                    successMessage.innerHTML = '<strong>Mensagem enviada com sucesso!</strong> Entraremos em contato em breve.';
-                    
-                    contactForm.insertAdjacentElement('afterend', successMessage);
-                    
-                    // Restaurar o botão
-                    submitButton.disabled = false;
-                    submitButton.innerText = 'Enviar Mensagem';
-                      // Limpar o formulário
-                    contactForm.reset();
-                    
-                    // Rolar para cima para ver a mensagem de sucesso
-                    window.scrollBy(0, -100);
-                    
-                    // Remover mensagem após alguns segundos
-                    setTimeout(() => {
-                        successMessage.remove();
-                    }, 5000);
-                }, 1500);
+                    successMessage.remove();
+                }, 5000);
             } else {
                 // Exibir mensagem de erro se a validação falhar
                 const errorMessage = document.createElement('div');
@@ -126,88 +222,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-      // Removida a funcionalidade do botão Voltar ao Topo
-      // Sistema de animação na rolagem
-    const setupScrollAnimations = () => {
-        // Função para detectar quando um elemento está visível na viewport
-        const isElementInViewport = (el, offset = 100) => {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset &&
-                rect.bottom >= 0
-            );
-        };
-
-        // Elementos para animar
-        const elements = [
-            // Banner
-            { selector: 'section.h-\\[80vh\\] img', animation: 'fade', delay: 0 },
-            { selector: 'section.h-\\[80vh\\] p', animation: 'slide-up', delay: 300 },
-            { selector: 'section.h-\\[80vh\\] .flex.flex-col a', animation: 'slide-up', delay: 600 },
-            
-            // Seções de conteúdo
-            { selector: 'section h2', animation: 'fade', delay: 0 },
-            { selector: 'section p', animation: 'fade', delay: 200 },
-            
-            // Imagens
-            { selector: '.md\\:w-1\\/2 img', animation: 'slide-right', delay: 0 },
-            
-            // Cards e elementos específicos
-            { selector: '#servicos .bg-white', animation: 'slide-up', delay: 200, staggered: true },
-            { selector: '#diferenciais .flex.flex-col', animation: 'slide-up', delay: 200, staggered: true },
-            { selector: '.faq-question', animation: 'slide-left', delay: 100, staggered: true },
-            
-            // Elementos do formulário
-            { selector: '#contato form > div', animation: 'fade', delay: 100, staggered: true }
-        ];
-
-        // Configurar animações para cada elemento
-        elements.forEach(({selector, animation, delay, staggered}) => {
-            const els = document.querySelectorAll(selector);
-            els.forEach((el, index) => {
-                // Aplicar atributo data-animate
-                el.setAttribute('data-animate', animation);
-                
-                // Aplicar delay (com stagger se necessário)
-                const finalDelay = staggered ? delay * (index + 1) : delay;
-                if (finalDelay > 0) {
-                    el.style.transitionDelay = `${finalDelay}ms`;
-                }
-                
-                // Se já estiver visível na carga inicial, mostrar imediatamente
-                if (isElementInViewport(el)) {
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, 100);
-                }
-            });
-        });
-
-        // Função para verificar elementos visíveis e animá-los
-        const checkVisibility = () => {
-            document.querySelectorAll('[data-animate]:not(.visible)').forEach(el => {
-                if (isElementInViewport(el)) {
-                    el.classList.add('visible');
-                }
-            });
-        };
-
-        // Verificar visibilidade no scroll com throttle para performance
-        let scrollTimeout;
-        window.addEventListener('scroll', () => {
-            if (scrollTimeout) return;
-            scrollTimeout = setTimeout(() => {
-                checkVisibility();
-                scrollTimeout = null;
-            }, 100);
-        });
-        
-        // Verificar visibilidade inicial
-        checkVisibility();
-    };
-    
-    // Inicializar animações
-    setupScrollAnimations();
+      // Removida a funcionalidade do botão Voltar ao Topo    // Inicializar AOS (Animate on Scroll)
+    AOS.init({
+        duration: 800,        // duração da animação em ms
+        easing: 'ease-in-out', // tipo de easing
+        once: false,          // se true, a animação ocorre apenas uma vez
+        mirror: true,         // se true, os elementos são animados ao entrar e sair da tela
+        offset: 120,          // offset (em px) a partir do qual os elementos começam a animar
+        delay: 0,             // atraso padrão
+        anchorPlacement: 'top-bottom', // define qual posição do elemento em relação à janela deve acionar a animação
+    });
     
     // Mascarar o campo de telefone
     const phoneInput = document.getElementById('phone');
