@@ -181,36 +181,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 answer.classList.add('hidden');
                 answer.style.maxHeight = null;
             }
-        });
-    });      // Código do carrossel de fotos removido
-      // Efeito de destaque para imagens importantes ao passar o mouse
-    const imgSobreMim = document.querySelector('#sobre img[src*="foto_perto"]');
-    const imgPsicanalise = document.querySelector('img[src*="ilustracao_psicologo"]');
-    
-    if (imgSobreMim) {
-        imgSobreMim.addEventListener('mouseenter', function() {
-            this.classList.add('hover-effect');
-        });
+        });    });      // Código do carrossel de fotos removido
+      // Efeito de destaque para títulos quando hover nas imagens    // Configurando os efeitos de hover para as imagens com tratamento consistente para modo claro e escuro
+    document.querySelectorAll('.image-container').forEach(container => {
+        // Certifique-se de que o overlay exista para uma experiência consistente
+        const overlay = container.querySelector('.overlay-effect');
+        if (!overlay) {
+            const newOverlay = document.createElement('div');
+            newOverlay.className = 'overlay-effect';
+            container.appendChild(newOverlay);
+        }
+          // Garantir que a animação seja aplicada à imagem
+        const profileImage = container.querySelector('.profile-image');
+        if (profileImage) {
+            // Configurar transição suave em JavaScript também
+            const easeOutBack = 'cubic-bezier(0.165, 0.84, 0.44, 1)';
+            profileImage.style.willChange = 'transform';
+            profileImage.style.transition = `transform 0.5s ${easeOutBack}`;
+            profileImage.style.backfaceVisibility = 'hidden'; // Corrige problemas de renderização
+            
+            // Evitar possíveis transformações anteriores
+            setTimeout(() => {
+                profileImage.style.transform = 'scale(1)';
+            }, 50);
+        }
         
-        imgSobreMim.addEventListener('mouseleave', function() {
-            this.classList.remove('hover-effect');
-        });
-    }
-      if (imgPsicanalise) {
-        imgPsicanalise.addEventListener('mouseenter', function() {
+        // Adicionar efeito ao passar o mouse
+        container.addEventListener('mouseenter', function() {
             // Encontrar o h2 mais próximo na seção
             const section = this.closest('section');
             const h2 = section ? section.querySelector('h2') : null;
             if (h2) h2.classList.add('text-accent');
+            
+            // Aplicar zoom de forma suave com timeout para garantir que seja processado corretamente
+            if (profileImage) {
+                requestAnimationFrame(() => {
+                    profileImage.style.transform = 'scale(1.05)';
+                });
+            }
         });
         
-        imgPsicanalise.addEventListener('mouseleave', function() {
+        // Remover efeito ao tirar o mouse
+        container.addEventListener('mouseleave', function() {
             // Encontrar o h2 mais próximo na seção
             const section = this.closest('section');
             const h2 = section ? section.querySelector('h2') : null;
             if (h2) h2.classList.remove('text-accent');
+            
+            // Remover efeito de zoom com animação suave
+            if (profileImage) {
+                requestAnimationFrame(() => {
+                    profileImage.style.transform = 'scale(1)';
+                });
+            }
         });
-    }
+    });
       // Formulário de contato
     const contactForm = document.getElementById('contact-form');
     
@@ -365,13 +390,11 @@ Gostaria de agendar uma consulta.`;
     // Adicionar classe de serviço para estilização
     document.querySelectorAll('#servicos .bg-white').forEach(card => {
         card.classList.add('service-card');
-    });
-
-    // Após 2 segundos, mostrar o WhatsApp com uma animação
+    });    // Após 2 segundos, mostrar o WhatsApp com uma animação
     setTimeout(() => {
-        const whatsappButton = document.querySelector('.fixed[href*="wa.me"]');
+        const whatsappButton = document.getElementById('whatsapp-fixed');
         if (whatsappButton) {
-            whatsappButton.classList.add('animate-fade-in');
+            whatsappButton.style.opacity = '1';
         }
     }, 2000);
 });

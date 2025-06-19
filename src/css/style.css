@@ -1,5 +1,21 @@
 /* Estilos personalizados para a landing page */
 
+/* Definição de variáveis CSS globais */
+:root {
+    --primary-color: #3B82F6;   /* Azul mais claro */
+    --secondary-color: #93C5FD; /* Azul muito claro */
+    --accent-color: #93C5FD;    /* Verde claro */
+    --overlay-opacity: 0.15;    /* Opacidade padrão para overlays */
+}
+
+/* Garantindo que as variáveis sejam as mesmas em ambos os temas */
+.dark {
+    --primary-color: #3B82F6;   /* Mantém a mesma cor primária */
+    --secondary-color: #93C5FD; /* Mantém a mesma cor secundária */
+    --accent-color: #93C5FD;    /* Mantém a mesma cor de destaque */
+    --overlay-opacity: 0.15;    /* Mantém a mesma opacidade */
+}
+
 /* Animações */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -136,44 +152,103 @@ nav a:hover::after {
     background-image: linear-gradient(to right, rgba(59, 130, 246, 0.9), rgba(147, 197, 253, 0.9));
 }
 
-/* Estilo do botão WhatsApp flutuante */
-.fixed[href*="wa.me"] {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-    transition: all 0.3s ease;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1000;
-    animation: pulse-whatsapp 2s infinite;
+/* Botão WhatsApp - Implementação Simplificada e Fixa */
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 55px; /* Aumentado */
+    height: 55px; /* Aumentado */
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 55px; /* Aumentado para corresponder à altura */
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    opacity: 0.95; /* Inicialmente um pouco transparente */
+    transform: translateZ(0); /* Acelera hardware */
+    will-change: opacity; /* Otimiza para animações de opacidade */
 }
 
-.fixed[href*="wa.me"]:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+/* Efeito de pulso mais pronunciado com sombra maior */
+@keyframes subtle-pulse {
+    0% { opacity: 0.9; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); transform: scale(1); }
+    50% { opacity: 1; box-shadow: 0 6px 18px rgba(18, 140, 126, 0.6); transform: scale(1.05); }
+    100% { opacity: 0.9; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); transform: scale(1); }
+}
+
+.whatsapp-fixed {
+    animation: subtle-pulse 2s infinite;
+}
+
+.whatsapp-fixed i {
+    font-size: 32px; /* Aumentado */
+}
+
+@media (min-width: 768px) {
+    .whatsapp-fixed {
+        width: 65px; /* Aumentado para telas maiores */
+        height: 65px; /* Aumentado para telas maiores */
+        line-height: 65px;
+        bottom: 25px;
+        right: 25px;
+    }
+    
+    .whatsapp-fixed i {
+        font-size: 36px; /* Aumentado */
+    }
+}
+
+.whatsapp-fixed:hover,
+.whatsapp-fixed:focus {
+    background-color: #128C7E;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.08);
     animation-play-state: paused;
 }
 
-/* Botão do WhatsApp específico */
-.whatsapp-button {
-    animation: pulse-whatsapp 2s infinite !important;
-    position: relative;
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+/* Garante que não haja efeito visual que possa afetar o posicionamento */
+#whatsapp-fixed {
+    contain: layout style size; /* Contém os efeitos de layout */
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
-.whatsapp-button:hover {
-    animation-play-state: paused !important;
+/* Configurações adicionais para garantir que o botão fique dentro da tela */
+html, body {
+    overflow-x: hidden; /* Impede rolagem horizontal em toda a página */
+    position: relative; /* Estabelece um contexto de posicionamento para elementos fixos */
+    width: 100%; /* Garante que a página tenha exatamente 100% de largura */
+    max-width: 100%; /* Impede que qualquer elemento ultrapasse a largura da tela */
 }
 
-.whatsapp-button::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(37, 211, 102, 0.4);
-    z-index: -1;
-    animation: pulse-whatsapp 2s infinite;
+/* Regra específica para dispositivos Android que podem ter problemas */
+@supports (-webkit-overflow-scrolling: touch) {
+    .whatsapp-fixed {
+        right: env(safe-area-inset-right, 10px);
+        bottom: env(safe-area-inset-bottom, 10px);
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* Regra para garantir que o botão não ultrapasse a tela em dispositivos muito pequenos */
+@media (max-width: 320px) {
+    .whatsapp-fixed {
+        width: 48px; /* Aumentado, mas ainda adequado para telas pequenas */
+        height: 48px;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .whatsapp-fixed i {
+        font-size: 26px; /* Aumentado */
+    }
 }
 
 /* Estilo para cards de serviços */
@@ -346,6 +421,18 @@ section img[src*="ilustracao_psicologo"]:hover {
     color: #D1D5DB !important;
 }
 
+/* Melhoria de contraste para listas e textos informativos no modo escuro */
+.dark ol li,
+.dark ul li {
+    color: #E5E7EB !important;
+}
+
+.dark ol li span.font-medium,
+.dark ul li span.font-medium {
+    color: #93C5FD !important;
+    font-weight: 600;
+}
+
 /* Estilizações para as seções específicas */
 .dark h2[class*="text-3xl"] {
     color: #60A5FA; /* Cor mais clara para títulos principais no modo escuro */
@@ -421,4 +508,89 @@ html.dark * {
     .testimonial-item {
         scroll-snap-align: center;
     }
+}
+
+/* Configuração unificada e melhorada para containers de imagens e efeitos hover */
+.image-container {
+    max-width: 480px; /* Aumentado de 400px para 480px */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transição mais suave com cubic-bezier */
+    will-change: transform, box-shadow; /* Melhora o desempenho das animações */
+}
+
+/* Efeitos hover consistentes para todos os temas - sem o translateY para evitar o "pulo" */
+.image-container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Garantindo que o efeito de zoom funcione em todos os browsers e temas */
+.image-container:hover .profile-image {
+    transform: scale(1.05); /* Aumentado um pouco para ser mais visível */
+    -webkit-transform: scale(1.05); /* Suporte para Safari */
+}
+
+.image-container:hover .overlay-effect {
+    opacity: var(--overlay-opacity);
+}
+
+.profile-image {
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transição mais suave */
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    max-height: 550px; /* Aumentado para acomodar imagens maiores */
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    will-change: transform; /* Melhora o desempenho das animações */
+    transform-origin: center; /* Garante que o zoom seja a partir do centro */
+    backface-visibility: hidden; /* Corrige possíveis problemas de renderização */
+    -webkit-backface-visibility: hidden;
+}
+
+.overlay-effect {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 0.5rem;
+}
+
+/* Efeito de overlay usando as variáveis CSS para consistência entre os temas */
+.overlay-effect {
+    background-color: var(--accent-color); /* Verde accent como padrão para ambos os temas */
+}
+
+@media (min-width: 768px) {
+    .image-container {
+        max-width: 480px; /* Aumentado de 400px para 480px */
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-image {
+        max-height: 350px;
+    }
+    
+    .image-container {
+        max-width: 90%;
+    }
+}
+
+/* Regras específicas e otimizadas para o modo escuro */
+html.dark .image-container {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+html.dark .profile-image {
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+html.dark .image-container:hover .profile-image {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
 }
