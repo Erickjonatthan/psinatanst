@@ -347,7 +347,6 @@ section img[src*="ilustracao_psicologo"]:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #1F2937;
     z-index: 1;
 }
 
@@ -460,7 +459,7 @@ section img[src*="ilustracao_psicologo"]:hover {
 
 /* Ajustes específicos para o modo escuro */
 .dark #contato::before {
-    background-color: rgba(30, 64, 175, 0.85);
+    background-color: #1F2937;
 }
 
 .dark footer {
