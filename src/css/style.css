@@ -355,10 +355,6 @@ section img[src*="ilustracao_psicologo"]:hover {
     z-index: 2;
 }
 
-#contato h2, #contato p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
 /* Estilos para o Modo Escuro */
 .dark .text-gray-600 {
     color: #D1D5DB; /* Cor mais clara para texto em fundo escuro */
