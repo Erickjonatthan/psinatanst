@@ -1,6 +1,54 @@
-# Landing Page para Psicólogo
+# Landing Page para o Psicólogo Natan Santos
 
-Este projeto é uma landing page moderna e responsiva para um psicólogo, desenvolvida com HTML, CSS (utilizando Tailwind CSS) e JavaScript puro.
+Este projeto é uma landing page moderna, responsiva e otimizada para SEO para o psicólogo Natan Santos, desenvolvida com HTML, CSS (utilizando Tailwind CSS) e JavaScript puro. O site está hospedado em https://psinatanst.com.br/
+
+## Otimização SEO
+
+O site foi otimizado para SEO (Search Engine Optimization) seguindo as melhores práticas:
+
+### Meta Tags e Dados Estruturados
+- Title, Description e Keywords otimizados
+- Open Graph Tags para redes sociais
+- Schema.org para Rich Snippets (LocalBusiness, ProfessionalService e FAQPage)
+- Meta tags de geolocalização
+
+### Acessibilidade e UX
+- Semântica HTML5 correta com estrutura hierárquica de cabeçalhos
+- Breadcrumbs para navegação
+- Alt text descritivo em todas as imagens
+- Lazy loading para imagens não críticas
+
+### Desempenho
+- Preload de recursos críticos
+- Lazy loading para CSS não crítico
+- Otimização de imagens
+- Core Web Vitals melhorados
+
+### Arquivos para Indexação
+- robots.txt
+- sitemap.xml
+- manifest.json para PWA
+
+## Palavras-chave Principais
+- Psicólogo Natan Santos
+- Psicólogo Online
+- Psicólogo Recife
+- Psicanálise
+- Psicoterapia
+- Atendimento Psicológico
+- CRP 02/30840
+- Ansiedade
+- Depressão
+- Terapia Online
+
+## Manutenção e Atualização
+Para manter o bom posicionamento do site nos buscadores, recomenda-se:
+
+1. Atualizar regularmente o conteúdo
+2. Monitorar o desempenho via Google Analytics e Search Console
+3. Manter as informações de contato atualizadas
+4. Responder às avaliações e comentários online
+5. Publicar conteúdos relevantes sobre psicologia e saúde mental
 
 ## Estrutura do Projeto
 

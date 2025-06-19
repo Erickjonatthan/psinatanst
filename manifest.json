@@ -1,0 +1,21 @@
+{
+    "name": "Psicólogo Natan Santos",
+    "short_name": "Psi Natan",
+    "description": "Atendimento psicológico humanizado com Natan Santos - CRP 02/30840",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3B82F6",
+    "icons": [
+        {
+            "src": "src/img/favicon_io/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "src/img/favicon_io/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

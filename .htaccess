@@ -1,0 +1,52 @@
+# Ativar o módulo de reescrita
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirecionar para HTTPS se não estiver usando HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Redirecionar de www para non-www
+    RewriteCond %{HTTP_HOST} ^www\.psinatanst\.com\.br [NC]
+    RewriteRule ^(.*)$ https://psinatanst.com.br/$1 [L,R=301]
+    
+    # Redirecionar para index.html se acessar diretórios
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.+[^/])$ $1/ [R=301,L]
+    
+    # Redirecionar para extensão HTML se o arquivo existir
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
+
+# Comprimir arquivos
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json
+</IfModule>
+
+# Cache Control
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/ico "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/html "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>

@@ -3,17 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Natan ST | Psicólogo Clínico</title>
+    <title>Natan Santos | Psicólogo Clínico em Recife - Atendimento Online</title>
     <meta name="description"
-        content="Atendimento psicológico humanizado para cuidar da sua saúde emocional com empatia, ética e acolhimento.">
+        content="Psicólogo Natan Santos (CRP 02/30840) oferece atendimento psicológico humanizado, psicanálise para adultos e adolescentes. Consultas online em todo Brasil, com foco em ansiedade, depressão e autoconhecimento.">
+    <meta name="keywords"
+        content="psicólogo, Natan Santos, psicólogo online, psicólogo Recife, psicanálise, psicólogo clínico, terapia online, saúde mental, ansiedade, depressão, atendimento psicológico">
+    <meta name="author" content="Natan Santos">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://psinatanst.com.br/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psinatanst.com.br/">
+    <meta property="og:title" content="Natan Santos | Psicólogo Clínico - Atendimento Online">
+    <meta property="og:description"
+        content="Psicólogo Natan Santos (CRP 02/30840) oferece atendimento psicológico humanizado para adultos e adolescentes. Consultas online em todo Brasil.">
+    <meta property="og:image" content="https://psinatanst.com.br/src/img/foto_perto.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://psinatanst.com.br/">
+    <meta property="twitter:title" content="Natan Santos | Psicólogo Clínico - Atendimento Online">
+    <meta property="twitter:description"
+        content="Psicólogo Natan Santos (CRP 02/30840) oferece atendimento psicológico humanizado para adultos e adolescentes. Consultas online em todo Brasil.">
+    <meta property="twitter:image" content="https://psinatanst.com.br/src/img/foto_perto.png">
+
+    <!-- Meta Localização -->
+    <meta name="geo.region" content="BR">
+    <meta name="geo.placename" content="Recife">
+    <meta name="geo.position" content="-8.0476;-34.8770">
+    <meta name="ICBM" content="-8.0476, -34.8770">
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="src/img/favicon_io/site.webmanifest">
+    <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="src/img/favicon_io/favicon.ico">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,11 +70,98 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
         rel="stylesheet"> <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="src/css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
     <!-- AOS - Animate On Scroll -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    </noscript>
+
+    <!-- Schema.org LD+JSON para Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Psicólogo Natan Santos",
+      "image": "https://psinatanst.com.br/src/img/foto_perto.png",
+      "@id": "https://psinatanst.com.br",
+      "url": "https://psinatanst.com.br",
+      "telephone": "+5581998138936",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Recife",
+        "addressRegion": "PE",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -8.0476,
+        "longitude": -34.8770
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/psi.natanst/",
+        "https://wa.me/5581998138936"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Psicólogo Natan Santos",
+      "url": "https://psinatanst.com.br",
+      "logo": "https://psinatanst.com.br/src/img/logo.png",
+      "serviceType": ["Psicoterapia", "Psicanálise", "Atendimento Psicológico"],
+      "description": "Psicólogo Clínico Natan Santos (CRP 02/30840) oferece atendimento psicológico humanizado para adultos e adolescentes com base na psicanálise.",
+      "telephone": "+5581998138936",
+      "email": "psinatanst@gmail.com",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Psicoterapia Individual"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Psicoterapia para Adolescentes"
+            }
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 
 <body class="font-sans text-dark bg-light transition-colors duration-300 dark:bg-gray-900 dark:text-white">
@@ -58,7 +171,8 @@
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center"> <a href="#"
                     class="text-2xl font-serif font-bold text-primary flex items-center">
-                    <img src="src/img/logo.png" alt="Logo Psi Natan" class="h-28 w-48">
+                    <img src="src/img/logo.png" alt="Logo Psicólogo Natan Santos - Atendimento psicológico online"
+                        class="h-28 w-48">
                 </a>
             </div>
             <div class="hidden md:flex items-center space-x-8"> <a href="#"
@@ -98,18 +212,20 @@
                     class="text-gray-600 hover:text-primary py-2 transition-colors dark:text-gray-300 dark:hover:text-primary">Contato</a>
             </div>
         </div>
-    </header> <!headerner principal -->
-    <section class="relative h-[80vh] bg-gradient-to-r from-primary/60 to-secondary/40 text-white flex items-center">
-        <div class="absolute inset-0 bg-[url('src/img/banner.png')] bg-cover bg-center mix-blend-multiply opacity-90">
+    </header> <!-- Banner Principal -->
+    <section class="relative h-[80vh] bg-gradient-to-r from-primary/60 to-secondary/40 text-white flex items-center"
+        aria-label="Banner Principal">
+        <div class="absolute inset-0 bg-[url('src/img/banner.png')] bg-cover bg-center mix-blend-multiply opacity-90"
+            role="img" aria-label="Imagem de fundo do psicólogo Natan Santos">
         </div>
         <div class="container mx-auto px-4 z-10">
             <div class="max-w-2xl">
-                <p class="text-2xl font-semibold mb-8 bg-black/40 dark:bg-black/60 backdrop-blur-sm py-3 px-4 rounded-lg inline-block shadow-md"
+                <h1 class="text-2xl font-semibold mb-8 bg-black/40 dark:bg-black/60 backdrop-blur-sm py-3 px-4 rounded-lg inline-block shadow-md"
                     data-aos="fade-up" data-aos-delay="300">
                     <span class="text-accent font-bold">Psicoterapia online</span> para adultos e
                     adolescentes,
                     <span class="border-b-2 border-accent">disponível em todo o Brasil</span>.
-                </p>
+                </h1>
                 <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="500">
                     <a href="#contato"
                         class="bg-accent hover:bg-accent/90 text-dark font-medium px-6 py-3 rounded-md transition-colors inline-block text-center">Agende
@@ -125,19 +241,25 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="800">
-                    <div class="image-container mx-auto" style="max-width: 480px;">
-                        <img src="src/img/foto_perto.png" alt="Natan | Psicólogo Clínico"
-                            class="profile-image shadow-lg w-full h-auto object-cover max-h-[550px]">
+                    <div class="image-container mx-auto" style="max-width: 480px;"> <img src="src/img/foto_perto.png"
+                            alt="Psicólogo Natan Santos - CRP 02/30840 - especialista em atendimento psicológico online baseado na psicanálise"
+                            class="profile-image shadow-lg w-full h-auto object-cover max-h-[550px]" loading="lazy">
                         <div class="overlay-effect"></div>
                     </div>
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary">Sobre Mim</h2>
-                    <p class="mb-4 text-lg">Sou psicólogo clínico - CRP: 02/30840 e atuo com escuta clínica fundamentada
-                        na psicanálise. Meu trabalho é guiado por uma escuta ética, acolhedora e especializada,
+                    <h2 class="text-3xl font-serif font-bold mb-6 text-primary">Sobre Natan Santos - Psicólogo Clínico
+                    </h2>
+                    <p class="mb-4 text-lg">Sou <strong>psicólogo clínico</strong> - CRP: 02/30840 e atuo com
+                        <strong>escuta clínica fundamentada
+                            na psicanálise</strong>. Meu trabalho em <strong>Recife e online para todo Brasil</strong> é
+                        guiado por uma escuta ética, acolhedora e especializada,
                         respeitando a singularidade de cada sujeito.</p>
-                    <p class="mb-4 text-lg">Atendo adolescentes e adultos de todos os gêneros que estejam atravessando
-                        momentos de sofrimento psíquico, conflitos internos ou que desejam se conhecer profundamente.
+                    <p class="mb-4 text-lg">Atendo <strong>adolescentes e adultos</strong> de todos os gêneros que
+                        estejam atravessando
+                        momentos de <strong>ansiedade, depressão, sofrimento psíquico, conflitos internos</strong> ou
+                        que desejam se conhecer profundamente
+                        através da <strong>psicoterapia</strong>.
                     </p>
                     <p class="mb-6 text-lg">Se você está vivendo um tempo de angústias, dúvidas ou precisa de um espaço
                         seguro para falar, aqui encontrará um ambiente de acolhimento e escuta, onde sua fala será
@@ -149,9 +271,9 @@
                             <p>Graduação em Psicologia - Especialização em Psicanálise</p>
                         </div>
                         <div class="bg-light p-6 rounded-lg flex flex-col items-center" data-aos="fade-up"
-                            data-aos-delay="400">
-                            <img src="src/img/nome_crp.png" alt="Registro Profissional CRP 02/30840"
-                                class="h-40 mb-3 shadow-md">
+                            data-aos-delay="400"> <img src="src/img/nome_crp.png"
+                                alt="Registro Profissional do Psicólogo Natan Santos - CRP 02/30840 - Conselho Regional de Psicologia"
+                                class="h-40 mb-3 shadow-md" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -161,7 +283,7 @@
     <section id="servicos" class="py-20 bg-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Meus Serviços</h2>
+                <h2 class="text-3xl font-serif font-bold mb-4 text-primary">Serviços de Psicologia com Natan Santos</h2>
                 <p class="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-300">Ofereço diversos serviços de
                     psicologia para ajudar
                     você a superar desafios e alcançar uma vida mais equilibrada e satisfatória.</p>
@@ -354,9 +476,9 @@
                     </ul>
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2">
-                    <div class="image-container mx-auto">
-                        <img src="src/img/foto_perto1.png" alt="Psicoterapia"
-                            class="profile-image shadow-lg w-full h-auto object-cover">
+                    <div class="image-container mx-auto"> <img src="src/img/foto_perto1.png"
+                            alt="Psicoterapia com Natan Santos - Sessões de psicanálise para saúde mental e bem-estar emocional"
+                            class="profile-image shadow-lg w-full h-auto object-cover" loading="lazy">
                         <div class="overlay-effect"></div>
                     </div>
                 </div>
@@ -367,9 +489,9 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2 order-2 md:order-1" data-aos="fade-right" data-aos-duration="800">
-                    <div class="image-container" style="max-width: 480px;">
-                        <img src="src/img/psicolo_e_paciente.png" alt="Psicólogo e Paciente em sessão terapêutica"
-                            class="profile-image shadow-lg w-full h-auto object-cover max-h-[550px]">
+                    <div class="image-container" style="max-width: 480px;"> <img src="src/img/psicolo_e_paciente.png"
+                            alt="Psicólogo Natan Santos em sessão terapêutica com paciente - Atendimento psicológico humanizado"
+                            class="profile-image shadow-lg w-full h-auto object-cover max-h-[550px]" loading="lazy">
                         <div class="overlay-effect"></div>
                     </div>
                 </div>
@@ -444,9 +566,9 @@
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2" data-aos="fade-left" data-aos-duration="800"
                     data-aos-delay="200">
-                    <div class="image-container" style="max-width: 480px;">
-                        <img src="src/img/ilustracao_psicologo.jpg" alt="Processo de psicoterapia pela psicanálise"
-                            class="profile-image shadow-lg w-full h-auto object-cover max-h-[550px]">
+                    <div class="image-container" style="max-width: 480px;"> <img src="src/img/ilustracao_psicologo.jpg"
+                            alt="Processo de psicoterapia pela psicanálise com Natan Santos - Escuta clínica e transformação pessoal"
+                            class="profile-image shadow-lg w-full h-auto object-cover max-h-[550px]" loading="lazy">
                         <div class="overlay-effect"></div>
                     </div>
                 </div>
@@ -587,7 +709,9 @@
                 <div class="md:w-1/2">
                     <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md mb-8 hover:shadow-lg overflow-hidden"
                         data-aos="fade-left" data-aos-duration="800">
-                        <img src="src/img/contato.png" alt="Imagem de contato" class="w-full h-full object-cover">
+                        <img src="src/img/contato.png"
+                            alt="Entre em contato com o Psicólogo Natan Santos para agendar sua consulta online"
+                            class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-md mt-8 hover:shadow-lg transition-shadow"
                         data-aos="fade-up" data-aos-delay="300">
@@ -606,6 +730,48 @@
                 </div>
             </div>
         </div>
+
+        <!-- FAQ Schema para Rich Snippets -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Quanto tempo dura uma sessão de terapia?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As sessões de terapia geralmente duram 50 minutos, o que é considerado uma hora clínica. Este tempo foi estabelecido para proporcionar uma experiência terapêutica eficaz sem sobrecarregar emocionalmente o paciente."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Com que frequência devo fazer terapia?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Recomendo iniciar com sessões semanais para estabelecer uma base sólida para o trabalho terapêutico. À medida que ocorrem progressos, podemos avaliar a possibilidade de ajustar a frequência para quinzenal ou mensal, dependendo das suas necessidades específicas."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Como funciona o atendimento online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "O atendimento online é realizado por videoconferência através de plataformas seguras e privadas. Você receberá um link para acessar a sala virtual no horário agendado. É importante estar em um local tranquilo e privado, com boa conexão de internet para garantir a qualidade da sessão."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "A terapia é confidencial?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim, a confidencialidade é um princípio fundamental da psicoterapia. Tudo o que é discutido nas sessões é confidencial, exceto em situações específicas previstas pelo código de ética profissional, como risco de vida para o paciente ou terceiros, ou quando solicitado judicialmente."
+                  }
+                }
+              ]
+            }
+            </script>
         </div>
     </section> <!-- Footer -->
     <footer class="bg-dark text-white py-12 transition-colors duration-300">
@@ -654,10 +820,39 @@
             </div>
         </div>
     </footer> <!-- AOS - Animate On Scroll -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <!-- Script JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> <!-- Script JavaScript -->
     <script src="src/js/main.js"></script>
+    <!-- Analytics -->
+    <script src="src/js/analytics.js"></script>
+
+    <!-- Script para melhorar core web vitals -->
+    <script>
+        // Preload de imagens críticas
+        const preloadImages = () => {
+            const images = [
+                'src/img/banner.png',
+                'src/img/foto_perto.png',
+                'src/img/logo.png'
+            ];
+
+            images.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+        };
+
+        // Executar preload para melhorar LCP (Largest Contentful Paint)
+        window.addEventListener('load', preloadImages);
+    </script>
+
+    <!-- Espaço para inserir o código do Google Analytics ou Tag Manager -->
+    <script>
+        // Este espaço está reservado para inserir o código do Google Analytics ou Tag Manager
+        // quando o site estiver pronto para ser monitorado
+    </script>
 </body>
 
 </html>
