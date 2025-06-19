@@ -347,7 +347,7 @@ section img[src*="ilustracao_psicologo"]:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(59, 130, 246, 0.7);
+    background-color: #1F2937;
     z-index: 1;
 }
 
