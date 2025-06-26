@@ -33,7 +33,7 @@ class AnalyticsManager {
         // Carregar script do Google Analytics
         const script = document.createElement('script');
         script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${G-MD7K2BNFSS}`;
         document.head.appendChild(script);
         
         script.onload = () => {
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.analyticsManager.updateConsent(true, window.cookieManager.isCookieTypeEnabled('marketing'));
                 
                 // Inicializar com ID do GA4 quando disponível
-                // window.analyticsManager.init('G-XXXXXXXXXX'); // Descomente e adicione seu ID
+                window.analyticsManager.init('G-MD7K2BNFSS'); // Descomente e adicione seu ID
             }
         }
     }, 100);
