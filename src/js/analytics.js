@@ -33,7 +33,7 @@ class AnalyticsManager {
         // Carregar script do Google Analytics
         const script = document.createElement('script');
         script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${G-MD7K2BNFSS}`;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
         document.head.appendChild(script);
         
         script.onload = () => {
