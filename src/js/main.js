@@ -397,4 +397,33 @@ Gostaria de agendar uma consulta.`;
             whatsappButton.style.opacity = '1';
         }
     }, 2000);
+
+    // Integração com sistema de cookies
+    // Aguardar o cookie manager estar disponível para integrar com analytics
+    const initCookieIntegration = () => {
+        if (window.cookieManager && window.updateAnalyticsConsent) {
+            // Configurar listener para mudanças nas preferências de cookies
+            const originalSaveCookiePreferences = window.cookieManager.saveCookiePreferences;
+            window.cookieManager.saveCookiePreferences = function() {
+                originalSaveCookiePreferences.call(this);
+                // Atualizar consent do analytics após salvar preferências
+                setTimeout(() => {
+                    window.updateAnalyticsConsent();
+                }, 100);
+            };
+        }
+    };
+
+    // Tentar integração imediatamente ou aguardar
+    if (window.cookieManager) {
+        initCookieIntegration();
+    } else {
+        // Aguardar cookie manager estar disponível
+        const checkInterval = setInterval(() => {
+            if (window.cookieManager) {
+                clearInterval(checkInterval);
+                initCookieIntegration();
+            }
+        }, 100);
+    }
 });
