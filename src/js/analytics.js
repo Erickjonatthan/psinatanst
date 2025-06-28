@@ -64,10 +64,6 @@ class AnalyticsManager {
 
     // Rastrear evento
     trackEvent(action, category = 'General', label = null, value = null) {
-        if (!this.isAnalyticsEnabled()) {
-            console.log('Analytics tracking skipped - cookies not accepted');
-            return;
-        }
 
         if (!this.isInitialized) {
             // Enfileirar evento para processar depois

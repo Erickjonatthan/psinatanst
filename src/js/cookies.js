@@ -298,6 +298,9 @@ class CookieManager {
         this.hidePreferencesModal();
         
         this.showToast('Todos os cookies foram aceitos!', 'success');
+        
+        // Refresh leve na página após modificação
+        setTimeout(() => { location.reload(); }, 500);
     }
 
     // Rejeitar cookies opcionais
@@ -313,6 +316,9 @@ class CookieManager {
         this.hideCookieBanner();
         
         this.showToast('Apenas cookies necessários foram mantidos.', 'info');
+        
+        // Refresh leve na página após modificação
+        setTimeout(() => { location.reload(); }, 500);
     }
 
     // Salvar preferências customizadas
@@ -323,6 +329,9 @@ class CookieManager {
         this.hidePreferencesModal();
         
         this.showToast('Preferências de cookies salvas!', 'success');
+        
+        // Refresh leve na página após modificação
+        setTimeout(() => { location.reload(); }, 500);
     }
 
     // Aplicar configurações de cookies
@@ -533,11 +542,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Adicionar link de política de cookies no footer
     window.cookieManager.addCookiePolicyLink();
-    
-    // Log para debug
-    console.log('🍪 Sistema de Cookies inicializado');
-    console.log('📊 Para debug: window.cookieManager');
-    console.log('📈 Para analytics: window.analyticsManager');
 });
 
 // Tornar disponível globalmente
